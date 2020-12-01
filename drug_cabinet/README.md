@@ -2,7 +2,7 @@
 **Implement drug storage that collects all the drugs available at a pharmacy**
 
 ### Class hierarchy
-There are 7 classes used to define drugs. The main is `Drug`. `Drug` is divided into `Swallowed` and `Vaccine`. Swallowed is divided into `DietarySupplement` and `Painkiller`. `Vaccine` is divided into `Non_Repeatable` and `Repeatable`. `Drug`, `Swallowed` and `Vaccine` is abstract. Each non-abstract has its own `toString()` method that displays all information about the drug.
+There are 7 classes used to define drugs. The main is `Drug`. `Drug` is divided into `Swallowed` and `Vaccine`. Swallowed is divided into `DietarySupplement` and `Painkiller`. `Vaccine` is divided into `Non_Repeatable` and `Repeatable`. `Drug`, `Swallowed` and `Vaccine` is abstract. Each non-abstract has its own `toString()` method that displays all information about the drug. **UML Class** diagram for drugs is available [here](https://github.com/jedrzejkopiszka/OOP/blob/main/drug_cabinet/UML%20class_jedrzej_kopiszka.pdf) 
 <br>
 There is a class `Pandemic` that for each drug in the cabinet removes the drug from the storage with `pDisease` and adds the removed drug back to the cabinet with probability `1- pRecovery`. 
 
