@@ -39,7 +39,7 @@ void Human::SetAll(string name, string surname){
 }
 
 void Human :: IntroduceYourself(){
-    cout<<"Human introduces himself: "<<this->first_name<<" "<<this->last_name<<endl; // Basic introduction
+    cout<<"Human introduces himself: "<<this->first_name<<" "<<this->last_name<<endl;  // Basic introduction
 }
 
 Human::Human(string name, string surname){  //constructor if both parameters provided
@@ -48,7 +48,7 @@ Human::Human(string name, string surname){  //constructor if both parameters pro
     Human::num_of_humans++;
 }
 
-Human::Human(){ //constructor when no parameters provided
+Human::Human(){  //constructor when no parameters provided
     this->first_name = "default_first_name";
     this->last_name = "default_last_name";
     Human::num_of_humans++;
@@ -75,10 +75,11 @@ class Student : public Human{
         void IntroduceYourself();
 };
 
-Student::Student(string name, string surname, int id) : Human(name, surname){  //constructor
+Student::Student(string name, string surname, int id) : Human(name, surname){  //constructor of Student - inheritance from Human
     this -> student_id = id;
 }
 
+// Student introduces itself in different way than standard way declared for Human
 void Student :: IntroduceYourself(){
     cout<<"Student introduces himself:"<<this->GetFirstName()<<" "<<this->GetLastName()<<" "<<this->student_id<<endl;
 }
@@ -93,7 +94,7 @@ class Lecturer : public Human{
     Lecturer() : Human(){};
 };
 
-Lecturer::Lecturer(string name, string surname):Human(name, surname){};
+Lecturer::Lecturer(string name, string surname):Human(name, surname){};  // constructor of Lecturer - inheritance from Human
 
 
 int main()
@@ -104,9 +105,10 @@ int main()
     cout<<"Enter queue length: ";
     cin>>n;
 
-    vector<Human*> humans;
+    vector<Human*> humans;  // objects will be stored in vector of Humans
+    // each iteration adds a lecturer or student to the vector. The addition is random, follows a uniform distribution 
     for(int i=0; i<n; ++i){
-        if (rand()%100<50){
+        if (rand()%100<50){ 
             humans.push_back(new Lecturer());
             humans[i]->SetAll("name"+to_string(i),"last_name"+to_string(i));
         }
@@ -116,7 +118,7 @@ int main()
             humans[i]->SetAll("name"+to_string(i),"last_name"+to_string(i));
         }
     }
-
+    // each object introduces itself and drinks 
     for(int i=0; i<n; ++i){
         humans[i]->IntroduceYourself();
         humans[i]->Drink();
