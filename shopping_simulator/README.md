@@ -1,5 +1,6 @@
-# Shopping simulator - starting soon
+# Shopping simulator
+**starting soon**
 
 
-##Technologies 
+## Technologies 
 Java
