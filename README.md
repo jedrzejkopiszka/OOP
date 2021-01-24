@@ -3,7 +3,7 @@
 
  
 ## Drug cabinet (C++)
-**The goal of this project is to implement a drug cabinet that stores drugs available in a pharmacy.**
+**The goal of this project is to implement a drug cabinet that stores drugs available in a .**
 Drugs are stored in 4 classes created with the help of 3 abstract classes. 
 Console application generates a user-defined number of drugs with a certain probability. Each drug has its own ```toString()``` method that prints specifics regarding each drug.
 There is a separate class ```Pandemic()``` that removes the drug from the cabinet with a probability ```pDisease``` . With probability ```1 - pRecovery``` drug may be added back to the cabinet.
